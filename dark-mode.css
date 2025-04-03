@@ -1,0 +1,62 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode a {
+    color: #8ab4f8;
+}
+
+body.dark-mode a:hover {
+    color: #aecbfa;
+}
+
+body.dark-mode header, 
+body.dark-mode footer {
+    color: #e0e0e0;
+}
+
+body.dark-mode footer {
+    border-top: 1px solid #333;
+}
+
+body.dark-mode .tagline {
+    color: #b0b0b0;
+}
+
+body.dark-mode nav a {
+    color: #8ab4f8;
+}
+
+/* Theme Toggle Button Styles */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hidden {
+    display: none !important;
+}
