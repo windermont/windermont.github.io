@@ -29,26 +29,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Function to update the toggle button icon/text
 // Immediately apply saved theme on page load
-(function() {
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark') {
-    document.documentElement.classList.add('dark');
-    setButton('dark');
-  } else {
-    setButton('light');
-  }
+(function(){
+  const link = document.getElementById('dark-theme');
+  const saved = localStorage.getItem('theme') || 'light';
+  link.disabled = (saved !== 'dark');
+  setButton(saved);
 })();
 
 function toggleTheme() {
-  const isDark = document.documentElement.classList.toggle('dark');
-  const theme = isDark ? 'dark' : 'light';
+  const link = document.getElementById('dark-theme');
+  link.disabled = !link.disabled;
+  const theme = link.disabled ? 'light' : 'dark';
   localStorage.setItem('theme', theme);
   setButton(theme);
 }
 
-// update the button’s text & class
 function setButton(theme) {
   const btn = document.querySelector('button.theme-toggle');
   if (!btn) return;
@@ -62,5 +58,3 @@ function setButton(theme) {
     btn.classList.add('dark');
   }
 }
-
-
