@@ -28,3 +28,15 @@ footer {
 nav a {
     color: #8ab4f8;
 }
+
+/* Style the toggle button in dark mode */
+button.theme-toggle {
+    color: #e0e0e0;
+    border-color: #e0e0e0;
+    background: none;
+}
+
+/* Subtle hover for the button in dark mode */
+button.theme-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
+}
