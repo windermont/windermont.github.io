@@ -150,3 +150,21 @@ button.theme-toggle.dark {
   background: none;
 }
 
+/* float toggle in the viewport’s top-right */
+button.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+/* on very small screens, tighten spacing */
+@media (max-width: 480px) {
+  button.theme-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 3px 8px;
+    font-size: 13px;
+  }
+}
+
