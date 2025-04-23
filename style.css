@@ -123,3 +123,30 @@ button.theme-toggle {
   right: 1rem;
 }
 
+/* position header as relative container */
+header {
+  position: relative;
+}
+
+/* move toggle to top-right corner */
+button.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* light-mode look (button shows “Dark”) */
+button.theme-toggle.light {
+  color: #000;
+  border-color: #000;
+  background: none;
+}
+
+/* dark-mode look (button shows “Light”) */
+/* dark-mode.css will invert your page colors; we invert the button too */
+button.theme-toggle.dark {
+  color: #fff;
+  border-color: #fff;
+  background: none;
+}
+
