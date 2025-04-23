@@ -93,3 +93,20 @@ ul li {
     margin-bottom: 15px;
     font-size: 14px;
 }
+
+button.theme-toggle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover effect */
+button.theme-toggle:hover {
+  background-color: rgba(0,0,0,0.05);
+}
