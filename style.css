@@ -110,3 +110,16 @@ button.theme-toggle {
 button.theme-toggle:hover {
   background-color: rgba(0,0,0,0.05);
 }
+
+/* allow the header to be the positioning context */
+header {
+  position: relative;
+}
+
+/* float the existing toggle into the top-right of the header */
+button.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
