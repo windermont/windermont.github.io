@@ -30,13 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Function to update the toggle button icon/text
-function updateToggleButton(isDarkMode) {
-    const toggleButton = document.getElementById('theme-toggle');
-    if (isDarkMode) {
-        toggleButton.innerHTML = '☀️';
-        toggleButton.title = 'Switch to light mode';
-    } else {
-        toggleButton.innerHTML = '🌙';
-        toggleButton.title = 'Switch to dark mode';
-    }
+function toggleTheme() {
+  const id = 'dark-theme';
+  const existing = document.getElementById(id);
+  if (existing) {
+    existing.remove();
+    this.textContent = 'Dark';
+  } else {
+    const link = document.createElement('link');
+    link.id = id;
+    link.rel = 'stylesheet';
+    link.href = 'dark-mode.css';
+    document.head.appendChild(link);
+    this.textContent = 'Light';
+  }
 }
+
