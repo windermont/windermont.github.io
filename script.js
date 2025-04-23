@@ -30,19 +30,37 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Function to update the toggle button icon/text
-function toggleTheme() {
-  const id = 'dark-theme';
-  const existing = document.getElementById(id);
-  if (existing) {
-    existing.remove();
-    this.textContent = 'Dark';
+// Immediately apply saved theme on page load
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.documentElement.classList.add('dark');
+    setButton('dark');
   } else {
-    const link = document.createElement('link');
-    link.id = id;
-    link.rel = 'stylesheet';
-    link.href = 'dark-mode.css';
-    document.head.appendChild(link);
-    this.textContent = 'Light';
+    setButton('light');
+  }
+})();
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  const theme = isDark ? 'dark' : 'light';
+  localStorage.setItem('theme', theme);
+  setButton(theme);
+}
+
+// update the button’s text & class
+function setButton(theme) {
+  const btn = document.querySelector('button.theme-toggle');
+  if (!btn) return;
+  if (theme === 'light') {
+    btn.textContent = 'Dark';
+    btn.classList.remove('dark');
+    btn.classList.add('light');
+  } else {
+    btn.textContent = 'Light';
+    btn.classList.remove('light');
+    btn.classList.add('dark');
   }
 }
+
 
